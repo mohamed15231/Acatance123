@@ -1,6 +1,6 @@
 // import 'package:asz/res.dart';
-// import 'package:asz/screens/widgets/AppColors.dart';
-// import 'package:asz/screens/widgets/CustomText.dart';
+// import 'package:asz/Screens/widgets/AppColors.dart';
+// import 'package:asz/Screens/widgets/CustomText.dart';
 // import 'package:flutter/material.dart';
 //
 // class CustomSlider extends StatefulWidget {

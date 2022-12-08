@@ -6,16 +6,28 @@ class DioHelper{
 //to get data from API
  static Future getData({
   required String url,
+   Map<String,dynamic>? query,
 })async{
+   dio.options.headers={
+     'Content-Type': 'application/json',
+   };
+
    return await dio.get(
      url,
+     queryParameters: query
    );
  }
 
- static Future postData({
+
+
+//to put data from API
+ static Future<Response<dynamic>> postData({
   required String url,
   required Map<String, dynamic> data,
 })async{
-   return await dio.post(url,data: data);
+   // dio.options.headers= {
+   //   'Content-Type': 'application/json',
+   // };
+   return await dio.post(url,queryParameters: data);
  }
 }

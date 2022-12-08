@@ -15,12 +15,24 @@ class BuildLoginForm extends StatelessWidget {
               CustomInputFormField(
                 controller: loginData.idController,
                 labeltxt: 'User Id',
+                validator: (value){
+                  if(value!.isEmpty){
+                    return "Id mustn't empty";
+                  }
+                  return null;
+                },
               ),
               const SizedBox(
                 height: 10,
               ),
               CustomInputFormField(
                 controller: loginData.passwordController,
+                validator: (value){
+                  if(value!.isEmpty){
+                    return "Password mustn't empty";
+                  }
+                  return null;
+                },
                 secure: true,
                 labeltxt: 'Password',
               ),

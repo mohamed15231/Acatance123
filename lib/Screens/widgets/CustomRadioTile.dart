@@ -1,4 +1,4 @@
-// import 'package:acatance/screens/NewAccPackages/NewAccPackagesImports.dart';
+// import 'package:acatance/Screens/NewAccPackages/NewAccPackagesImports.dart';
 // import 'package:flutter/material.dart';
 //
 // import 'AppColors.dart';

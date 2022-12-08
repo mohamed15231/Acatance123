@@ -22,7 +22,8 @@ class CustomInputFormField extends StatefulWidget {
         this.isRTL = false,
         this.icon,
         this.hintColor = Colors.grey,
-        this.horizontalMargin = 0,this.verticalMargin=7,
+        this.horizontalMargin = 0,
+        this.verticalMargin=7,
         this.multiLine = false,
         this.fillColor,
         this.textColor=Colors.black,
@@ -93,7 +94,6 @@ class _CustomInputFormFieldState extends State<CustomInputFormField> {
                 ),
               ),
             TextFormField(
-
               controller: widget.controller,
               validator: widget.validator,
               onFieldSubmitted: widget.onFieldSubmitted??(value){
