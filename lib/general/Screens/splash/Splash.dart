@@ -14,11 +14,11 @@ class _SplashState extends State<Splash> {
 
   Future scale() async {
     if (splashData.is_First_Time) {
-      await Future.delayed(const Duration(milliseconds: 1000), () {});
+      await Future.delayed(const Duration(milliseconds: 200), () {});
       splashData.is_First_Time = false;
     }
     while (splashData.scaleval < 20.w) {
-      await Future.delayed(const Duration(milliseconds: 3), () {});
+      await Future.delayed(const Duration(milliseconds: 1), () {});
       if (mounted)
         setState(() {
           splashData.scaleval += .019;
