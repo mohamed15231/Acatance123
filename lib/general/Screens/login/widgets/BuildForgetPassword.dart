@@ -14,11 +14,11 @@ class BuildForgetPassword extends StatelessWidget {
               MaterialPageRoute(builder: (_) => const ForgetPassword()),
             );
           },
-          child: CustomText(
-            title: 'Forget Password?',
+          child: Custom_Text(
+            text: 'Forget Password?',
             fontWeight: FontWeight.w900,
             size: 14.sp,
-            color: AppColors.blackOpacity,
+            color_text: AppColors.blackOpacity,
             decoration: TextDecoration.underline,
           )),
     );

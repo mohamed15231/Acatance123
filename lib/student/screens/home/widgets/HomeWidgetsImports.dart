@@ -3,4 +3,3 @@ import 'package:acatance/student/screens/home/HomeImports.dart';
 import 'package:flutter/material.dart';
 
 part 'BuildTabItem.dart';
-part 'TabIcon.dart';

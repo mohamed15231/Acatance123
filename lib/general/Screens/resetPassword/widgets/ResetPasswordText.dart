@@ -8,11 +8,11 @@ class ResetPasswordText extends StatelessWidget {
     return Container(
       alignment: Alignment.topLeft,
       padding: EdgeInsets.only(bottom: 50.r),
-      child: CustomText(
-        title: 'Reset Password..',
+      child: Custom_Text(
+        text: 'Reset Password..',
         size: 20.sp,
         fontWeight: FontWeight.bold,
-        color: AppColors.black,
+        color_text: AppColors.black,
       ),
     );
   }

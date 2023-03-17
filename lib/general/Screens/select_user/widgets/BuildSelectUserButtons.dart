@@ -14,8 +14,8 @@ class BuildSelectUserButtons extends StatelessWidget {
         children: [
           Expanded(
             child: DefaultButton(
-              onTap: ()=>selectUserData.onSelectDoctor(context),
-              title: 'Professor',
+              onPressed: ()=>selectUserData.onSelectDoctor(context),
+              text: 'Professor',
               textSize: 18.sp,
             ),
           ),
@@ -24,10 +24,10 @@ class BuildSelectUserButtons extends StatelessWidget {
           ),
           Expanded(
             child: DefaultButton(
-              onTap: ()=>selectUserData.onSelectStudent(context),
-              title: 'Student',
-              color: AppColors.white,
-              textColor: AppColors.primary,
+              onPressed: ()=>selectUserData.onSelectStudent(context),
+              text: 'Student',
+              buttonColor: AppColors.white,
+              TextColor: AppColors.primary,
               textSize: 18.sp,
             ),
           ),

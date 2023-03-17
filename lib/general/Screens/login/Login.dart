@@ -10,6 +10,9 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
 
   LoginData loginData = LoginData();
+  var type = GlobalState.instance.get('type');
+  FlutterToast _flutterToast=FlutterToast();
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +20,22 @@ class _LoginState extends State<Login> {
       create: (BuildContext context) =>LoginCubit(),
       child: BlocConsumer<LoginCubit,LoginStates>(
         listener: (context, state) {
+          if (state is LoginSuccessState) {
+            CacheHelper.saveData(key: ConstantValue.token, value: LoginCubit.get(context).loginModel!.data!.token);
+            if(type==0){
+              Navigator_And_Replace.navigate(context: context, page: Student_Home());
+
+            }else{
+              Navigator_And_Replace.navigate(context: context, page: Doctor_Home());
+
+
+            }
+
+          }
+          if(state is LoginErrorState){
+            _flutterToast.toastShow(text: "Your data is not correct", state: ToastState.ERROR);
+          }
+
 
         },
         builder: (context,state) {
@@ -29,17 +48,21 @@ class _LoginState extends State<Login> {
                 icon: Icon(Icons.arrow_back_ios,color: AppColors.black,),
               ),
             ),
-            body: Center(
-              child: SingleChildScrollView(
-                child: Container(
-                  margin: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      BuildLoginText(),
-                      BuildLoginForm(loginData: loginData),
-                      const BuildForgetPassword(),
-                       BuildLoginButton(loginData:loginData),
-                    ],
+            body: ConditionalBuilderRec(
+              condition: state is LoginLoadingState,
+              builder: (context) => Animation_loader(),
+              fallback: (context) => Center(
+                child: SingleChildScrollView(
+                  child: Container(
+                    margin: const EdgeInsets.all(15),
+                    child: Column(
+                      children: [
+                        BuildLoginText(),
+                        BuildLoginForm(loginData: loginData),
+                        const BuildForgetPassword(),
+                        BuildLoginButton(loginData:loginData),
+                      ],
+                    ),
                   ),
                 ),
               ),

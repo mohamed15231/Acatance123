@@ -9,11 +9,11 @@ class BuildLoginText extends StatelessWidget {
     return Container(
       alignment: Alignment.topLeft,
       padding: EdgeInsets.symmetric(vertical: 20.r),
-      child: CustomText(
+      child: Custom_Text(
         align: TextAlign.start,
-        title: type==0?'Login as student':'Login as professor',
+        text: type==0?'Login as student':'Login as professor',
         size: 25.sp,
-        color: AppColors.black,
+        color_text: AppColors.black,
         fontWeight: FontWeight.bold,
       ),
     );

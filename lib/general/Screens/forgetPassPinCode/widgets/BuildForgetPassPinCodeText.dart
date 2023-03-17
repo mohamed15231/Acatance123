@@ -9,20 +9,20 @@ class BuildForgetPassPinCodeText extends StatelessWidget {
       margin: EdgeInsets.only(top: 20.r,bottom: 15.r),
       child: Column(
         children: [
-          CustomText(
-            title: 'verify \n your password',
+          Custom_Text(
+            text: 'verify \n your password',
             size: 25.sp,
             align: TextAlign.center,
             fontWeight: FontWeight.bold,
-            color: AppColors.black,
+            color_text: AppColors.black,
           ),
           SizedBox(
             height: 15.h,
           ),
-          CustomText(
-            title: 'Enter your OTP code here',
+          Custom_Text(
+            text: 'Enter your OTP code here',
             size: 18.sp,
-            color: AppColors.black,
+            color_text: AppColors.black,
             fontWeight: FontWeight.w400,
           ),
         ],

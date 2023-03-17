@@ -6,14 +6,14 @@ class BuildPinCodeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultButton(
-      onTap: (){
+      onPressed: (){
         Navigator.push(
           context,
           MaterialPageRoute(builder: (_) => const ResetPassword()),
         );
       },
       margin: const EdgeInsets.symmetric(vertical: 20),
-      title: 'Submit',
+      text: 'Submit',
       width: 150,
     );
   }

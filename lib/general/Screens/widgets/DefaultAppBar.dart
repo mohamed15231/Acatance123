@@ -1,5 +1,6 @@
 import 'package:acatance/general/screens/widgets/AppColors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'CustomText.dart';
 
@@ -36,21 +37,21 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: size??100,
       elevation: elev??0,
-      title: CustomText(
-        title: '$title',
-        color: color??Colors.white,
+      title: Custom_Text(
+        text: '$title',
+        color_text: color??Colors.white,
         size: 18,
       ),
       centerTitle: center,
       titleSpacing: 0,
-      backgroundColor: bgColor??AppColors.primary,
+      backgroundColor: bgColor??Colors.transparent,
       leading: leading?? Offstage(
         offstage: !back!,
         child: IconButton(
           onPressed: (){Navigator.of(context).pop();},
           icon: Icon(Icons.arrow_back_ios_outlined,
-            size: iconSize??16,
-            color: iconColor??Colors.white,
+            size: iconSize??20.w,
+            color: iconColor??Colors.black,
           ),
         ),
       ),

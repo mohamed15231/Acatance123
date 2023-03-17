@@ -1,8 +1,18 @@
-import 'package:acatance/general/Screens/login/cubit/login_cubit.dart';
-import 'package:acatance/general/Screens/login/cubit/login_state.dart';
+import 'package:acatance/Screens/doctorHome/DoctorHomeImports.dart';
+import 'package:acatance/doctor/screens/home/DoctorHomeImports.dart';
 import 'package:acatance/general/Screens/login/widgets/LoginWidgetsImports.dart';
 import 'package:acatance/general/Screens/widgets/AppColors.dart';
+import 'package:acatance/general/Screens/widgets/PushAndReplace.dart';
+import 'package:acatance/general/Screens/widgets/animation_Loader.dart';
+import 'package:acatance/general/Screens/widgets/toastflutter.dart';
+import 'package:acatance/general/blocks/login_cubit/login_cubit.dart';
+import 'package:acatance/general/blocks/login_cubit/login_state.dart';
 import 'package:acatance/general/constants/BuildAppLogo.dart';
+import 'package:acatance/general/constants/ConstantValues.dart';
+import 'package:acatance/general/helper/utils/GlobalState.dart';
+import 'package:acatance/general/utilities/utils_functions/cache_helper.dart';
+import 'package:acatance/student/screens/home/HomeImports.dart';
+import 'package:conditional_builder_rec/conditional_builder_rec.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

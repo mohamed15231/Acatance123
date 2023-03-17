@@ -6,14 +6,14 @@ class BuildRegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultButton(
-      onTap: (){
+      onPressed: (){
         Navigator.push(
           context,
           MaterialPageRoute(builder: (_) => const RegisterPinCode()),
         );
       },
       margin: const EdgeInsets.symmetric(vertical: 40),
-      title: 'Register',
+      text: 'Register',
     );
   }
 }

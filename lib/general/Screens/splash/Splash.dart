@@ -14,11 +14,11 @@ class _SplashState extends State<Splash> {
 
   Future scale() async {
     if (splashData.is_First_Time) {
-      await Future.delayed(const Duration(milliseconds: 200), () {});
+      await Future.delayed(const Duration(milliseconds: 1000), () {});
       splashData.is_First_Time = false;
     }
     while (splashData.scaleval < 20.w) {
-      await Future.delayed(const Duration(milliseconds: 1), () {});
+      await Future.delayed(const Duration(milliseconds: 3), () {});
       if (mounted)
         setState(() {
           splashData.scaleval += .019;
@@ -32,17 +32,17 @@ class _SplashState extends State<Splash> {
       splashData.is_First_Time = false;
     }
     while (splashData.translationval > -30.w) {
-      await Future.delayed(const Duration(milliseconds: 3), () {});
+      await Future.delayed(const Duration(milliseconds:3), () {});
       setState(() {
         splashData.translationval -= 1;
       });
     }
     await Future.delayed(const Duration(milliseconds: 1100), () {});
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (_)=> widget.notFirstTime ? SelectUser() : OnBoarding()),
-          (route) => false,
-    );
+
+    widget.notFirstTime
+        ? Navigator_And_Replace.navigate(
+        context: context, page: SelectUser())
+        : Navigator_And_Replace.navigate(context: context, page: On_Boarding());
   }
 
   @override

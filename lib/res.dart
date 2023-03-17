@@ -7,10 +7,14 @@ class Res {
   static const String forgetPass2 = "assets/images/forgetPass2.png";
   static const String jannah = "assets/fonts/jannah.ttf";
   static const String logo = "assets/images/logo.png";
-  static const String onBoarding1 = "assets/images/onBoarding1.png";
-  static const String onBoarding2 = "assets/images/onBoarding2.png";
-  static const String onBoarding3 = "assets/images/onBoarding3.png";
+  static const String onBoarding1 = "assets/images/onboarding1.png";
+  static const String onBoarding2 = "assets/images/onboarding2.png";
+  static const String onBoarding3 = "assets/images/onboarding3.png";
   static const String resetPassword = "assets/images/resetPassword.png";
-  static const String selectType = "assets/images/selectType.png";
-  static const String splash = "assets/images/splash.png";
+  static const String selectType = "assets/images/choice_screen.png";
+  static const String splash = "assets/images/Vector 16.png";
+  static const String showPass = "assets/images/iconoir_eye-alt.png";
+  static const String hidePass = "assets/images/ph_eye-closed-thin.png";
+  static const String prefixIcon = "assets/images/arcticons_nc-passwords.png";
+  static const String gifAnimation = "Gooey loader 1.gif";
 }

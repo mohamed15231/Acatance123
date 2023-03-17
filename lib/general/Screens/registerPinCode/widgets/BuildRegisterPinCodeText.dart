@@ -10,16 +10,16 @@ class BuildRegisterPinCodeText extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomText(
-            title: 'Enter OTP',
+          Custom_Text(
+            text: 'Enter OTP',
             size: 20,
             fontWeight: FontWeight.bold,
           ),
           const SizedBox(
             height: 10,
           ),
-          CustomText(
-            title: 'a 4 digit code has been sent to (email/mobile number).',
+          Custom_Text(
+            text: 'a 4 digit code has been sent to (email/mobile number).',
             size: 14,
           ),
         ],

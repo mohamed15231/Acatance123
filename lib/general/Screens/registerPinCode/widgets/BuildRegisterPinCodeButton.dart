@@ -6,14 +6,14 @@ class BuildRegisterPinCodeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultButton(
-      onTap: (){
+      onPressed: (){
         // Navigator.push(
         //   context,
         //   MaterialPageRoute(builder: (_) => const ForgetPassPinCode()),
         // );
       },
       margin: const EdgeInsets.symmetric(vertical: 20),
-      title: 'Confirm',
+      text: 'Confirm',
     );
   }
 }

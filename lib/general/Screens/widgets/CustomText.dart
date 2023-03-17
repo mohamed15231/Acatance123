@@ -1,32 +1,41 @@
+
 import 'package:flutter/material.dart';
 
-import 'AppColors.dart';
+class Custom_Text extends StatelessWidget {
 
-class CustomText extends StatelessWidget{
+  Custom_Text({Key? key,required this.text,this.color_text, this.fontWeight, this.size, this.decoration, this.decorationStyle, this.align, this.height, this.fontFamily}) : super(key: key);
 
-  final String? title;
-  final Color? color;
-  final double? size;
-  final int? maxLines;
-  final TextAlign? align;
+  final String text;
+  final Color? color_text ;
   final FontWeight? fontWeight;
+  final double? size;
   final TextDecoration? decoration;
-  CustomText({this.title,this.color,this.maxLines,this.size,this.align,this.fontWeight,this.decoration});
+  final TextDecorationStyle? decorationStyle;
+  final TextAlign? align;
+  final double? height;
+  final String? fontFamily;
+
+
+
 
   @override
   Widget build(BuildContext context) {
-    
     return Text(
-      title!,
-      maxLines: maxLines,
-      textAlign: align??TextAlign.start,
+      text,
+      textAlign:align ,
       style: TextStyle(
-        color: color??AppColors.primary,
-        fontSize: size??16,
-        fontWeight: fontWeight,
-        decoration: decoration?? TextDecoration.none,
+        fontFamily: fontFamily??"Poppins",
+        color: color_text ??Colors.white,
+        fontWeight: fontWeight??FontWeight.normal,
+        fontSize: size,
+        decoration: decoration,
+        decorationStyle: decorationStyle,
+        height: height,
+
+
+
+
       ),
     );
   }
-
 }

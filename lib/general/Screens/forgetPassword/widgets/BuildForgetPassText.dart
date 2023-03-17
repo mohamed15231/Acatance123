@@ -10,19 +10,19 @@ class BuildForgetPassText extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomText(
-            title: 'Forget your password!!',
+          Custom_Text(
+            text: 'Forget your password!!',
             size: 20.sp,
-            color: AppColors.black,
+            color_text: AppColors.black,
             fontWeight: FontWeight.bold,
           ),
           SizedBox(
             height: 10.h,
           ),
-          CustomText(
-            title: 'Don\'t worry it\'s normal to happen! so please enter your email to reset account',
+          Custom_Text(
+            text: 'Don\'t worry it\'s normal to happen! so please enter your email to reset account',
             size: 18.sp,
-            color: AppColors.blackOpacity,
+            color_text: AppColors.blackOpacity,
           ),
         ],
       ),

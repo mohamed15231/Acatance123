@@ -10,12 +10,7 @@ class HomeData{
   late Animation<double> animation;
   late CurvedAnimation curve;
 
-  List<BuildTabItem> tabs = const [
-    BuildTabItem(title: "Home", icon: Icons.home),
-    BuildTabItem(title: "Profile", icon:Icons.person),
-    BuildTabItem(title: "Scan", icon: Icons.date_range),
-    BuildTabItem(title: "Setting", icon: Icons.settings),
-  ];
+
 
   void initBottomNavigation(TickerProvider ticker) {
     tabController = TabController(length: 4, vsync: ticker, initialIndex: 0);

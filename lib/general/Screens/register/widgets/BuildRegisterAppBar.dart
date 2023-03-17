@@ -18,11 +18,11 @@ class _BuildRegisterAppBarState extends State<BuildRegisterAppBar> {
       centerTitle: true,
       title: Container(
         margin: const EdgeInsets.all(15),
-        child: CustomText(
-          title: 'Register new account',
+        child: Custom_Text(
+          text: 'Register new account',
           size: 25,
           fontWeight: FontWeight.bold,
-          color: AppColors.white,
+          color_text: AppColors.white,
         ),
       ),
 
