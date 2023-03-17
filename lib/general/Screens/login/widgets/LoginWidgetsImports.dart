@@ -1,13 +1,14 @@
+import 'package:acatance/doctor/screens/home/DoctorHomeImports.dart';
 import 'package:acatance/general/Screens/forgetPassword/ForgetPasswordImports.dart';
 import 'package:acatance/general/Screens/login/LoginImports.dart';
-import 'package:acatance/general/Screens/login/cubit/login_cubit.dart';
-import 'package:acatance/general/Screens/login/cubit/login_state.dart';
 import 'package:acatance/general/Screens/register/RegisterImports.dart';
 import 'package:acatance/general/Screens/widgets/AppColors.dart';
 import 'package:acatance/general/Screens/widgets/CustomText.dart';
 import 'package:acatance/general/Screens/widgets/DefaultButton.dart';
 import 'package:acatance/general/Screens/widgets/InputFormField.dart';
 import 'package:acatance/general/Screens/widgets/customCircularProgress.dart';
+import 'package:acatance/general/blocks/login_cubit/login_cubit.dart';
+import 'package:acatance/general/blocks/login_cubit/login_state.dart';
 import 'package:acatance/general/helper/utils/GlobalState.dart';
 import 'package:acatance/res.dart';
 import 'package:acatance/student/screens/home/HomeImports.dart';

@@ -20,16 +20,18 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         iconColor: AppColors.black,
         iconSize: 18.sp,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const BuildForgetPassText(),
-              BuildForgetPasswordForm(forgetPasswordData: forgetPasswordData),
-              const BuildForgetPasswordButton(),
-            ],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const BuildForgetPassText(),
+                BuildForgetPasswordForm(forgetPasswordData: forgetPasswordData),
+                const BuildForgetPasswordButton(),
+              ],
+            ),
           ),
         ),
       ),

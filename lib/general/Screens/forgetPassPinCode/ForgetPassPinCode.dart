@@ -20,28 +20,22 @@ class _ForgetPassPinCodeState extends State<ForgetPassPinCode> {
       ),
       body: Container(
         color: AppColors.white,
-        child: CustomScrollView(
-          slivers:
-          [
-            SliverList(delegate: SliverChildListDelegate(
-                [
-                  Container(
-                    padding: const EdgeInsets.all(15),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        BuildForgetPassPinCodeText(),
-                        BuildForgetPassPinCode(),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(15.r),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  BuildForgetPassPinCodeText(),
+                  BuildForgetPassPinCode(),
 
-                        BuildPinCodeButton(),
+                  BuildPinCodeButton(),
 
-
-                      ],
-                    ),
-                  )
-                ]
-            ))
-          ],
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

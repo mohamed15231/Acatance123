@@ -27,6 +27,10 @@ class BuildLoginButton extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (_)=>Home(),),
                   );
+                }else{
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_)=>DoctorHome(),),
+                  );
                 }
               }
             },

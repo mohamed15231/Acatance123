@@ -1,18 +1,18 @@
-part of 'HomeImports.dart';
+part of 'DoctorHomeImports.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class DoctorHome extends StatefulWidget {
+  const DoctorHome({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<DoctorHome> createState() => _DoctorHomeState();
 }
 
-class _HomeState extends State<Home> with TickerProviderStateMixin {
-  final HomeData homeData = HomeData();
+class _DoctorHomeState extends State<DoctorHome> with TickerProviderStateMixin {
+  final DoctorHomeData doctorHomeData = DoctorHomeData();
 
   @override
   void initState() {
-    homeData.initBottomNavigation(this);
+    doctorHomeData.initBottomNavigation(this);
     super.initState();
   }
 
@@ -23,20 +23,20 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         length: 4,
         initialIndex:0,
         child: Scaffold(
-          key: homeData.scaffold,
+          key: doctorHomeData.scaffold,
           resizeToAvoidBottomInset: false,
           body: TabBarView(
-            controller: homeData.tabController,
+            controller: doctorHomeData.tabController,
             physics: const NeverScrollableScrollPhysics(),
             children: const [
-              Main(),
-              Attendance(),
-              Setting(),
-              Profile(),
+              DoctorMain(),
+              DoctorAttendance(),
+              DoctorSetting(),
+              DoctorProfile(),
             ],
           ),
           bottomNavigationBar: BlocBuilder<GenericBloc<int>, GenericState<int>>(
-            bloc: homeData.navCubit,
+            bloc: doctorHomeData.navCubit,
             builder: (context, state) {
               return _buildBottomNavigationBar(state.data);
             },
@@ -50,28 +50,28 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     return AnimatedBottomNavigationBar.builder(
       itemCount: 4,
       tabBuilder: (int index, bool isActive) {
-        return TabIcon(index: index, active: isActive, homeData: homeData,);
+        return DoctorTabIcon(index: index, active: isActive, doctorHomeData: doctorHomeData,);
       },
       backgroundColor: AppColors.white,
       splashColor: AppColors.primary,
       activeIndex: current,
       elevation: 20,
-      notchAndCornersAnimation: homeData.animation,
+      notchAndCornersAnimation: doctorHomeData.animation,
       splashSpeedInMilliseconds: 300,
       notchSmoothness: NotchSmoothness.verySmoothEdge,
       gapLocation: GapLocation.none,
       leftCornerRadius: 30,
       rightCornerRadius: 30,
       height: 73,
-      onTap: (index) => homeData.animateTabsPages(index, context),
+      onTap: (index) => doctorHomeData.animateTabsPages(index, context),
     );
   }
 
 
   @override
   void dispose() {
-    homeData.tabController.dispose();
-    homeData.animationController.dispose();
+    doctorHomeData.tabController.dispose();
+    doctorHomeData.animationController.dispose();
     super.dispose();
   }
 }
