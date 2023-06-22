@@ -2,6 +2,8 @@ part of 'Create_Qr_Imports.dart';
 
 enum ChooseDepartmentEnum { IT, Cs, Is }
 
+enum ChooseDuration { tenMin, TwentyMin,thirtyMin, fortyMin,fiftyMin,sixtyMin,seventyMin,eightyMin }
+
 
 enum ChooseWeekNumberEnum {
   First,
@@ -30,6 +32,37 @@ class CreateQrData {
         break;
     }
     return id;
+  }
+
+
+  static int duration({required ChooseDuration chooseDuration}) {
+    int duration;
+    switch (chooseDuration) {
+      case ChooseDuration.tenMin:
+        duration = 10;
+        break;
+      case ChooseDuration.TwentyMin:
+        duration = 20;
+        break;
+      case ChooseDuration.thirtyMin:
+        duration = 30;        break;
+      case ChooseDuration.fortyMin:
+        duration = 40;
+        break;
+      case ChooseDuration.fiftyMin:
+        duration = 50;
+        break;
+      case ChooseDuration.sixtyMin:
+        duration = 60;
+        break;
+      case ChooseDuration.seventyMin:
+        duration = 70;
+        break;
+      case ChooseDuration.eightyMin:
+        duration = 80;
+        break;
+    }
+    return duration;
   }
 
   static String weekNumber(

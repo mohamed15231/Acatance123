@@ -13,13 +13,14 @@ class Button_Create_Qr extends StatelessWidget {
        return Center(
 
          child: DefaultButton(
+
              text: "Create QR", onPressed: () {
            cubit.getQr(
              lecNumber: CreateQrData.weekNumber(chooseWeekNumberEnum: Doctor_Cubit.get(context).stateWeekNum),
              subjectId: cubit.subject_Id!,
              startTime: formatter,
              doctorId: idValue,
-             qr_Duration: cubit.dropDownValue,
+             qr_Duration: CreateQrData.duration(chooseDuration:Doctor_Cubit.get(context).stateDuration ),
            ).then((value) {
              cubit.moveToScanScreen(2);
              Navigator_And_Replace.navigate(context: context, page: Doctor_Home());

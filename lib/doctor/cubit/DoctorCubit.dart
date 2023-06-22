@@ -156,17 +156,26 @@ class Doctor_Cubit extends Cubit<Doctor_State> {
 }) {
     print(DeptId);
     emit(MakeQuizLoadingState());
-    HttpHelper.postData(
-      url: "${baseUrl}Doctors/AddExam",
+    var map=Map<String,dynamic>();
+    map['DeptId']="4fb11d7b-6988-4b5a-a92a-c2823144c3e5";
+    map['RankId']="ddab4df3-df8e-4b39-ac00-6a9d7e51f928";
+    map['DoctorId']="3a30ad1e-3c1e-43e4-af56-1635b384318d";
+    map['StartTime']="2023-06-19T00:11:29.422Z";
+    map['Subject_Id']="17f23f8f-d74a-4f79-90ab-9fefe6446764";
+    map['Duration']=30;
+    map['Degree']="10";
+    map['ExamName']="test";
+    HttpHelper.postDataQuiz(
+      url: "http://yosefebrahim-001-site1.btempurl.com/Doctors/AddExam",
       data: {
-        "DeptId ":DeptId,
-        "RankId":RankId ,
-        "DoctorId":DoctorId ,
-        "StartTime":StartTime,
-        "Subject_Id":SubjectId,
-        "Duration":Duration  ,
-        "Degree":Degree ,
-        "ExamName":ExamName  ,
+        "DeptId":"4fb11d7b-6988-4b5a-a92a-c2823144c3e5",
+        "RankId":"ddab4df3-df8e-4b39-ac00-6a9d7e51f928" ,
+        "DoctorId":"3a30ad1e-3c1e-43e4-af56-1635b384318d" ,
+        "StartTime":"2023-06-19T00:11:29.422Z",
+        "Subject_Id":"17f23f8f-d74a-4f79-90ab-9fefe6446764",
+        "Duration":"10"  ,
+        "Degree":"10" ,
+        "ExamName":"test"  ,
       }
     ).then((value) {
       print(value);
@@ -326,6 +335,7 @@ class Doctor_Cubit extends Cubit<Doctor_State> {
 
   ChooseDepartmentEnum stateDepartment = ChooseDepartmentEnum.Cs;
 
+
   void onTap_It() {
     stateDepartment = ChooseDepartmentEnum.IT;
     emit(DoctorOnTapDepartmentState());
@@ -340,6 +350,43 @@ class Doctor_Cubit extends Cubit<Doctor_State> {
     stateDepartment = ChooseDepartmentEnum.Cs;
     emit(DoctorOnTapDepartmentState());
   }
+
+  ChooseDuration stateDuration = ChooseDuration.tenMin;
+
+  void onTap_TenMin() {
+    stateDuration = ChooseDuration.tenMin;
+    emit(DoctorOnTapDurationState());
+  }
+ void onTap_TwentyMin() {
+    stateDuration = ChooseDuration.TwentyMin;
+    emit(DoctorOnTapDurationState());
+  }
+  void onTap_ThirtyMin() {
+    stateDuration = ChooseDuration.thirtyMin;
+    emit(DoctorOnTapDurationState());
+  }
+  void onTap_FortyMin() {
+    stateDuration = ChooseDuration.fortyMin;
+    emit(DoctorOnTapDurationState());
+  }
+  void onTap_FiftyMin() {
+    stateDuration = ChooseDuration.fiftyMin;
+    emit(DoctorOnTapDurationState());
+  }
+void onTap_SixtyMin() {
+    stateDuration = ChooseDuration.sixtyMin;
+    emit(DoctorOnTapDurationState());
+  }
+void onTap_SevenMin() {
+    stateDuration = ChooseDuration.seventyMin;
+    emit(DoctorOnTapDurationState());
+  }
+void onTap_EightyMin() {
+    stateDuration = ChooseDuration.eightyMin;
+    emit(DoctorOnTapDurationState());
+  }
+
+
   ChooseWeekNumberEnum stateWeekNum = ChooseWeekNumberEnum.First;
 
   void onTap_FirstWeek() {

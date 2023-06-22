@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../general/Screens/widgets/Widgets_Imports.dart';
 import '../../../../../general/constants/ConstantValues.dart';
+import '../../../../../res.dart';
 
 part 'DoctorAttendance.dart';
 part 'DoctorAttendanceData.dart';

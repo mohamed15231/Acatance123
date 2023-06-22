@@ -29,7 +29,10 @@ class Body_Screen extends StatelessWidget {
                 ),
                 Container_Profile_Screen(
                   text:"results" ,
-                  onPressed: (){},
+                  onPressed: (){
+
+                    Navigate_Push.navigate(context: context, page: Results());
+                  },
                   containerColor:AppColors.darkCerulean ,
                 ),
               ],

@@ -26,4 +26,5 @@ class Res {
   static const String scanNavBar = "assets/images/scanNavBar.png";
   static const String profileNavBar = "assets/images/profileNavBar.png";
   static const String vectorNavBar = "assets/images/Vector13.png";
+  static const String qrNotFound = "assets/images/qrNotFound.png";
 }

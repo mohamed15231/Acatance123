@@ -4,6 +4,7 @@ import 'package:acatance/doctor/screens/home/DoctorHomeImports.dart';
 import 'package:acatance/doctor/screens/home/screens/attendance_state/Attendance_State_Imports.dart';
 import 'package:acatance/doctor/screens/home/screens/create_qr/Create_Qr_Imports.dart';
 import 'package:acatance/doctor/screens/home/screens/make_quiz/Make_Quiz_Imports.dart';
+import 'package:acatance/doctor/screens/home/screens/results/Results_Imports.dart';
 import 'package:acatance/doctor/screens/home/screens/send_message/Send_Message_Imports.dart';
 import 'package:acatance/general/Screens/widgets/AppColors.dart';
 import 'package:acatance/general/Screens/widgets/Widgets_Imports.dart';

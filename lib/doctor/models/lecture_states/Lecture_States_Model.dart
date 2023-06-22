@@ -1,9 +1,10 @@
 class LectureStatesModel{
-  List<Get_Data> getData=[];
+  List<Get_Data>? getData;
   LectureStatesModel.fromJson(dynamic json){
     if(json!=null){
+      getData=[];
       json.forEach((v){
-        getData.add(Get_Data.fromJson(v));
+        getData!.add(Get_Data.fromJson(v));
       });
     }
   }

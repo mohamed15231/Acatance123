@@ -30,6 +30,8 @@ class DoctorSuccessDownloadQrState extends Doctor_State{}
 
 class DoctorOnTapDepartmentState extends Doctor_State{}
 
+class DoctorOnTapDurationState extends Doctor_State{}
+
 class DoctorOnTapYearState extends Doctor_State{}
 
 

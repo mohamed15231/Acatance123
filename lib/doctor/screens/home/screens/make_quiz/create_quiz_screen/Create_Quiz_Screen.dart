@@ -69,7 +69,7 @@ class Create_Quiz_Screen extends StatelessWidget {
                       print("degree :${degree.text}");
                       print("name:${name.text}");
                       print("duration:${Duration}");
-                      cubit.make_Quiz(StartTime: "2023-06-19T00:11:29.422Z", DeptId: DeptId, SubjectId: SubjectId, RankId: cubit.rank_Id!, DoctorId: DoctorId, Degree: int.parse(degree.text), ExamName: name.text, Duration: Duration);
+                      cubit.make_Quiz(StartTime: "2023-06-19T00:11:29.422Z", DeptId: DeptId, SubjectId: SubjectId, RankId: cubit.rank_Id!, DoctorId: DoctorId, Degree: 100, ExamName: name.text, Duration: Duration);
                     })
 
                   ],

@@ -29,7 +29,9 @@ class _DoctorAttendanceState extends State<DoctorAttendance> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(height: 20.h,),
+                      SizedBox(
+                        height: 20.h,
+                      ),
                       Custom_Text(
                         text: "Place the QR Code within this box to scan",
                         color_text: AppColors.textColor,
@@ -37,7 +39,9 @@ class _DoctorAttendanceState extends State<DoctorAttendance> {
                         size: 25.r,
                         fontWeight: FontWeight.w300,
                       ),
-                      SizedBox(height: 20.h,),
+                      SizedBox(
+                        height: 20.h,
+                      ),
                       Container(
                         child: Image.memory(
                           base64Decode(cubit.qr_model!.image!),
@@ -64,19 +68,47 @@ class _DoctorAttendanceState extends State<DoctorAttendance> {
                 ),
               ),
             ),
-            fallback: (context) => Container(
-              child: Center(
-                child: DefaultButton(
-                  textSize: 25.r,
-                  text: "Click here to \n Create QR",
-                  onPressed: () {
-                    cubit.getSubject(
-                      doctorId: idValue,
-                    );
-                    Navigate_Push.navigate(context: context, page: CreateQR());
-                  },
-                  height: 100.h,
-                ),
+            fallback: (context) => Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 40.h,
+                  ),
+
+                  Image.asset(Res.qrNotFound),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+
+                  Custom_Text(
+                    text:
+                        'There is no QR here.\nClick create QR if you want\nto create a new one.',
+                    color_text: AppColors.black,
+                    size: 20.r,
+                    fontWeight: FontWeight.w600,
+                    height: 1.5.h,
+                    align: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: 40.h,
+                  ),
+                  Container(
+                    child: Center(
+                      child: DefaultButton(
+                        textSize: 25.r,
+                        text: "Create QR",
+                        onPressed: () {
+                          cubit.getSubject(
+                            doctorId: idValue,
+                          );
+                          Navigate_Push.navigate(
+                              context: context, page: CreateQR());
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

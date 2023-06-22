@@ -8,28 +8,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../general/Screens/widgets/AppColors.dart';
+import '../widget/Custom_Text_States_Screen.dart';
 
 class Show_States_Screen extends StatelessWidget {
   const Show_States_Screen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<Doctor_Cubit,Doctor_State>(
-      listener: (context, state) {
-
-      },
-
-      builder: (context, state) {
-        var cubit=Doctor_Cubit.get(context);
-        return Scaffold(
-          appBar: DefaultAppBar(
-            onTap: () {
-              Navigator.of(context).pop();
-              cubit.lectureStatesModel!.getData=[];
-
-            },
-          ),
-          body: ConditionalBuilderRec(
+    return BlocConsumer<Doctor_Cubit, Doctor_State>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          var cubit = Doctor_Cubit.get(context);
+          return Scaffold(
+              appBar: DefaultAppBar(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  cubit.lectureStatesModel!.getData = null;
+                },
+              ),
+              body: ConditionalBuilderRec(
                 condition: state is! GetLectureLoadingStatesApi &&
                     cubit.lectureStatesModel?.getData != null,
                 builder: (context) {
@@ -42,14 +39,14 @@ class Show_States_Screen extends StatelessWidget {
                       Row(
                         children: [
                           Custom_Text(
-                            text: "Number of students : ",
+                            text: "Total number of attendees : ",
                             align: TextAlign.center,
                             color_text: Colors.black,
-                            fontWeight: FontWeight.w900,
-                            size: 20,
+                            fontWeight: FontWeight.w600,
+                            size: 20.r,
                           ),
                           Custom_Text(
-                            text: "${cubit.lectureStatesModel!.getData.length}",
+                            text: "${cubit.lectureStatesModel!.getData!.length}",
                             align: TextAlign.center,
                             color_text: Colors.green,
                             fontWeight: FontWeight.w900,
@@ -64,76 +61,64 @@ class Show_States_Screen extends StatelessWidget {
                         child: ListView.separated(
                           physics: BouncingScrollPhysics(),
                           itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: double.infinity,
-                              height: 120.h,
-                              decoration: BoxDecoration(
-                                color: AppColors.primary,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20.0)),
-                                boxShadow: <BoxShadow>[
-                                  BoxShadow(
-                                      color: Colors.grey,
-                                      blurRadius: 100,
-                                      offset: Offset(0, 10)),
-                                ],
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Custom_Text(
-                                          text: "Student Name : ",
-                                          align: TextAlign.center,
-                                        ),
-                                        Custom_Text(
-                                            text: cubit.lectureStatesModel!
-                                                .getData[index].studentName!),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Custom_Text(text: "Universe Id :"),
-                                        Custom_Text(
-                                            text: cubit.lectureStatesModel!
-                                                .getData[index].universityId!),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Custom_Text(text: "lecture Number :"),
-                                        Custom_Text(
-                                            text: cubit.lectureStatesModel!
-                                                .getData[index].lecNumber!),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Custom_Text(text: "major :"),
-                                        Custom_Text(
-                                            text: cubit.lectureStatesModel!
-                                                .getData[index].major!),
-                                      ],
-                                    ),
+                            return Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Container(
+                                width: double.infinity,
+                                height: 150.h,
+                                decoration: BoxDecoration(
+                                  color: AppColors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20.0)),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                        color: Colors.grey,
+                                        blurRadius: 400,
+                                        offset: Offset(0, 10)),
                                   ],
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      CustomTextStateScreen(
+                                        leftText: "Student Name: ",
+                                        RightText: cubit.lectureStatesModel!
+                                            .getData![index].studentName!,
+                                      ),
+                                      SizedBox(
+                                        height: 10.h,
+                                      ),
+                                      CustomTextStateScreen(
+                                        leftText: "Universe Id:",
+                                        RightText: cubit.lectureStatesModel!
+                                            .getData![index].universityId!,
+                                      ),
+                                      SizedBox(
+                                        height: 10.h,
+                                      ),
+                                      CustomTextStateScreen(
+                                        leftText: "lecture Number:",
+                                        RightText: cubit.lectureStatesModel!
+                                            .getData![index].lecNumber!,
+                                      ),
+                                      SizedBox(
+                                        height: 10.h,
+                                      ),
+                                      CustomTextStateScreen(
+                                          leftText: 'major:',
+                                          RightText: cubit.lectureStatesModel!
+                                              .getData![index].major!),
+                                    ],
+                                  ),
                                 ),
                               ),
                             );
                           },
-                          itemCount: cubit.lectureStatesModel!.getData.length,
+                          itemCount: cubit.lectureStatesModel!.getData!.length,
                           separatorBuilder: (BuildContext context, int index) =>
                               SizedBox(
                             height: 10.h,
@@ -144,11 +129,7 @@ class Show_States_Screen extends StatelessWidget {
                   );
                 },
                 fallback: (context) => Animation_loader(),
-              )
-
-          );
-      }
-    );
-
+              ));
+        });
   }
 }
