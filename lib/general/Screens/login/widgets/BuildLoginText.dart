@@ -11,7 +11,7 @@ class BuildLoginText extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20.r),
       child: Custom_Text(
         align: TextAlign.start,
-        text: type==0?'Login as student':'Login as professor',
+        text: type==2?'Login as student':'Login as professor',
         size: 25.sp,
         color_text: AppColors.black,
         fontWeight: FontWeight.bold,

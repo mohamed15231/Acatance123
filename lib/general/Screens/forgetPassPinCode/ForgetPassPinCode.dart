@@ -29,9 +29,6 @@ class _ForgetPassPinCodeState extends State<ForgetPassPinCode> {
                 children: [
                   BuildForgetPassPinCodeText(),
                   BuildForgetPassPinCode(),
-
-                  BuildPinCodeButton(),
-
                 ],
               ),
             ),

@@ -7,6 +7,7 @@ class ResetPasswordButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultButton(
       onPressed: () {
+
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
               builder: (_) => const Login(),
@@ -15,6 +16,7 @@ class ResetPasswordButton extends StatelessWidget {
       },
       margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 0),
       text: 'Submit',
+
       width: 150,
     );
   }

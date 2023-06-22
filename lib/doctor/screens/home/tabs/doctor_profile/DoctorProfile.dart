@@ -10,11 +10,11 @@ class DoctorProfile extends StatefulWidget {
 class _DoctorProfileState extends State<DoctorProfile> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 32.0.w, horizontal: 16.0.w),
-      child: SafeArea(
-        child: SingleChildScrollView(
-          physics:BouncingScrollPhysics(),
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 32.0.w, horizontal: 16.0.w),
+        child: SafeArea(
           child: Column(
             children: [
               HeaderProfile(),
@@ -27,5 +27,6 @@ class _DoctorProfileState extends State<DoctorProfile> {
         ),
       ),
     );
+
   }
 }

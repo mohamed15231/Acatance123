@@ -1,8 +1,10 @@
-import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class AppColors{
   static Color primary = const Color(0xFF02315E);
+  static Color QrContainer = const Color(0xFFC5C5C5);
+  static Color textColor = const Color(0xff4F7EA5);
   static Color backgroundColor = const Color(0xfff0f0f2);
   static Color yellow = const Color(0xffE8CB3A);
   static Color labelTextField = const Color(0xff7A7A7A);
@@ -22,7 +24,6 @@ class AppColors{
   static Color blackOpacity=Colors.black54;
   static Color white=Colors.white;
   static Color notifyColor=Colors.black54;
-
 
 
   static Color convertColor(String color){

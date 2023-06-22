@@ -1,8 +1,4 @@
-import 'package:acatance/general/screens/widgets/AppColors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'CustomText.dart';
+part of 'Widgets_Imports.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
@@ -16,6 +12,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double? elev;
   final Color? color,bgColor,iconColor;
   final bool? back,center;
+  final Function()? onTap;
 
   const DefaultAppBar({Key? key,
     this.title,
@@ -29,7 +26,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.bgColor,
     this.back=true,
     this.center=false,
-    this.iconColor, this.iconSize,
+    this.iconColor, this.iconSize, this.onTap,
   }) : super(key: key);
 
   @override
@@ -38,7 +35,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: size??100,
       elevation: elev??0,
       title: Custom_Text(
-        text: '$title',
+        text: '${title ??"" }',
         color_text: color??Colors.white,
         size: 18,
       ),
@@ -48,7 +45,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: leading?? Offstage(
         offstage: !back!,
         child: IconButton(
-          onPressed: (){Navigator.of(context).pop();},
+          onPressed:onTap ?? (){Navigator.of(context).pop();},
           icon: Icon(Icons.arrow_back_ios_outlined,
             size: iconSize??20.w,
             color: iconColor??Colors.black,

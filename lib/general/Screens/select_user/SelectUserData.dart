@@ -13,7 +13,7 @@ class SelectUserData {
   }
 
   void onSelectStudent(BuildContext context) {
-    GlobalState.instance.set("type", 0);
+    GlobalState.instance.set("type", 2);
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => Login()),

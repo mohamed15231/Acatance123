@@ -15,6 +15,15 @@ class Res {
   static const String splash = "assets/images/Vector 16.png";
   static const String showPass = "assets/images/iconoir_eye-alt.png";
   static const String hidePass = "assets/images/ph_eye-closed-thin.png";
-  static const String prefixIcon = "assets/images/arcticons_nc-passwords.png";
   static const String gifAnimation = "Gooey loader 1.gif";
+  static const String profSettings = "assets/images/profile_settings.png";
+  static const String secSettings = "assets/images/security.png";
+  static const String notificationSettings = "assets/images/notification.png";
+  static const String updateSettings = "assets/images/update.png";
+  static const String logoutSettings = "assets/images/logout.png";
+  static const String homeNavBar = "assets/images/homeNavBar.png";
+  static const String settingNavBar = "assets/images/settingNavBar.png";
+  static const String scanNavBar = "assets/images/scanNavBar.png";
+  static const String profileNavBar = "assets/images/profileNavBar.png";
+  static const String vectorNavBar = "assets/images/Vector13.png";
 }

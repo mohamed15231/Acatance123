@@ -32,7 +32,7 @@ class BuildLoginForm extends StatelessWidget {
               CustomInputFormField(
                 controller: loginData.passwordController,
                 image: Image.asset(
-                  "assets/images/arcticons_nc-passwords.png",
+                  Res.secSettings,
                   width: 20.w,
                   height: 20.h,
                 ),

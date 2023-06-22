@@ -83,28 +83,22 @@ class Student_Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => Student_Cubit(),
-      child: BlocConsumer<Student_Cubit,StudentState>(
-        builder: (BuildContext context, state) {
-          var cubit=Student_Cubit.get(context);
+    return BlocConsumer<Student_Cubit, StudentState>(
+      builder: (BuildContext context, state) {
+        var cubit = Student_Cubit.get(context);
 
-          return Scaffold(
-            bottomNavigationBar: CurvedNavigationBar(
-              color: AppColors.white,
-              backgroundColor: AppColors.selectedNavBarColor,
-              buttonBackgroundColor: AppColors.selectedNavBarColor,
-              height: 70,
-              onTap: (value) {
-                cubit.changePage(value);
-              },
-              items: tabs,
-            ),
-            body: cubit.screen[cubit.countPage],
-          );
-        },
-        listener: (BuildContext context, Object? state) {},
-      ),
+        return Scaffold(
+          bottomNavigationBar: CustomAnimatedBottomBar(
+            items: tabs,
+            onItemSelected: (value) {
+              cubit.changePage(value);
+            },
+            selectedIndex: cubit.countPage,
+          ),
+          body: cubit.screen[cubit.countPage],
+        );
+      },
+      listener: (BuildContext context, Object? state) {},
     );
   }
 }

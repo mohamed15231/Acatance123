@@ -1,9 +1,7 @@
-
-import 'package:flutter/material.dart';
-
+part of 'Widgets_Imports.dart';
 class Custom_Text extends StatelessWidget {
 
-  Custom_Text({Key? key,required this.text,this.color_text, this.fontWeight, this.size, this.decoration, this.decorationStyle, this.align, this.height, this.fontFamily}) : super(key: key);
+  Custom_Text({Key? key,required this.text,this.color_text, this.fontWeight, this.size, this.decoration, this.decorationStyle, this.align, this.height, this.fontFamily, this.textOverflow, this.maxLine}) : super(key: key);
 
   final String text;
   final Color? color_text ;
@@ -14,6 +12,8 @@ class Custom_Text extends StatelessWidget {
   final TextAlign? align;
   final double? height;
   final String? fontFamily;
+  final TextOverflow? textOverflow;
+  final int? maxLine;
 
 
 
@@ -23,7 +23,9 @@ class Custom_Text extends StatelessWidget {
     return Text(
       text,
       textAlign:align ,
+
       style: TextStyle(
+
         fontFamily: fontFamily??"Poppins",
         color: color_text ??Colors.white,
         fontWeight: fontWeight??FontWeight.normal,
@@ -31,11 +33,10 @@ class Custom_Text extends StatelessWidget {
         decoration: decoration,
         decorationStyle: decorationStyle,
         height: height,
-
-
-
-
       ),
+      maxLines: maxLine,
+      overflow: textOverflow,
+
     );
   }
 }

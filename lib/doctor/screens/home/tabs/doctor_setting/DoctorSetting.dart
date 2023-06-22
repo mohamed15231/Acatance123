@@ -10,6 +10,22 @@ class DoctorSetting extends StatefulWidget {
 class _DoctorSettingState extends State<DoctorSetting> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 32.0.w, horizontal: 16.0.w),
+        child: SafeArea(
+          child: Column(
+            children: [
+              HeaderProfile(),
+              SizedBox(
+                height: 54.h,
+              ),
+              Body_Settings_Screen()
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

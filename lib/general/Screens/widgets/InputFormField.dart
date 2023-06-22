@@ -1,9 +1,4 @@
-import 'package:acatance/general/Screens/widgets/AppColors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../res.dart';
-
+part of 'Widgets_Imports.dart';
 class CustomInputFormField extends StatefulWidget {
   const CustomInputFormField({
     Key? key,
@@ -43,7 +38,7 @@ class CustomInputFormField extends StatefulWidget {
     this.labeltxt,
     this.onFieldSubmitted,
     this.image,
-    this.isPassword,
+    this.isPassword, this.label,
   }) : super(key: key);
 
   final FormFieldValidator<String>? validator;
@@ -56,7 +51,7 @@ class CustomInputFormField extends StatefulWidget {
   final Widget? image;
   final Widget? suffixIcon, prefix;
   final TextEditingController? controller;
-  final String? upperText, initialValue, hint;
+  final String? upperText, initialValue, hint,label;
   final bool? hasLabel,
       isNext,
       isRTL,
@@ -132,6 +127,7 @@ class _CustomInputFormFieldState extends State<CustomInputFormField> {
               fontSize: 20.r,
               ),
           decoration: InputDecoration(
+            // label:widget.label ,
             fillColor: widget.fillColor ?? AppColors.white,
             // filled: true,
             hintStyle: TextStyle(color: widget.hintColor??AppColors.primary, fontSize: 18.r),

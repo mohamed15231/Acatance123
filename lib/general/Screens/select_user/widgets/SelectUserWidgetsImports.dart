@@ -1,8 +1,6 @@
 import 'package:acatance/general/Screens/select_user/SelectUserImports.dart';
 import 'package:acatance/general/Screens/widgets/AppColors.dart';
-import 'package:acatance/general/Screens/widgets/CustomText.dart';
-import 'package:acatance/general/Screens/widgets/DefaultAppBar.dart';
-import 'package:acatance/general/Screens/widgets/DefaultButton.dart';
+import 'package:acatance/general/Screens/widgets/Widgets_Imports.dart';
 import 'package:acatance/res.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
 
-import 'package:acatance/general/Screens/widgets/CustomText.dart';
+import 'package:acatance/general/Screens/widgets/Widgets_Imports.dart';
 import 'package:acatance/general/constants/BuildAppLogo.dart';
 import 'package:acatance/general/screens/widgets/AppColors.dart';
 import 'package:acatance/res.dart';

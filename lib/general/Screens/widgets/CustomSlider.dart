@@ -1,3 +1,5 @@
+part of 'Widgets_Imports.dart';
+
 // import 'package:asz/res.dart';
 // import 'package:asz/Screens/widgets/AppColors.dart';
 // import 'package:asz/Screens/widgets/CustomText.dart';

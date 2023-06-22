@@ -1,11 +1,11 @@
 part of 'SplashImports.dart';
 
 class Splash extends StatefulWidget {
-  const Splash({Key? key, required this.notFirstTime}) : super(key: key);
+  const Splash({Key? key, required this.screen}) : super(key: key);
 
   @override
   State<Splash> createState() => _SplashState();
-  final bool notFirstTime;
+  final Widget screen;
 }
 
 class _SplashState extends State<Splash> {
@@ -39,10 +39,8 @@ class _SplashState extends State<Splash> {
     }
     await Future.delayed(const Duration(milliseconds: 1100), () {});
 
-    widget.notFirstTime
-        ? Navigator_And_Replace.navigate(
-        context: context, page: SelectUser())
-        : Navigator_And_Replace.navigate(context: context, page: On_Boarding());
+        Navigator_And_Replace.navigate(
+        context: context, page:widget.screen);
   }
 
   @override
