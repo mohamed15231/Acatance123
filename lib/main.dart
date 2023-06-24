@@ -46,7 +46,6 @@ void main() async {
     widget = On_Boarding();
   }
 
-  // print(onBoarding);
 
   runApp(MyApp(
     startWidget: widget,
